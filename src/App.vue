@@ -9,12 +9,18 @@
     </a>
   </div>
   <el-button type="primary" @click="sayHi">I am ElButton</el-button>
+  <Child />
 </template>
 
 <script lang="ts">
   import { defineComponent, getCurrentInstance } from 'vue'
+  import Child from './components/Child'
+
   export default defineComponent({
     name: 'App',
+    components: {
+      Child
+    },
     setup () {
       const { proxy } = getCurrentInstance()!
       const sayHi = () => {
